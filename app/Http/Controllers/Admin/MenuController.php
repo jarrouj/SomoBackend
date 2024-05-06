@@ -12,7 +12,7 @@ class MenuController extends Controller
 {
     public function show_menu()
     {
-        $menu = Menu::latest()->paginate(10);
+        $menu = Menu::latest()->paginate(20);
         $categories = Category::all();
         $show    = Show::find(1);
 

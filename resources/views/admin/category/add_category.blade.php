@@ -26,6 +26,15 @@
 
 
 
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <select name="location_id" class="form-select" required>
+                            <option selected value="0">All Countries</option>
+                            @foreach ($locations as $location)
+                                <option value="{{ $location->id }}">{{ $location->country }}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
 
 

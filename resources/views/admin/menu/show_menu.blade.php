@@ -121,12 +121,7 @@
                                                 </td>
 
 
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">
-                                                        {{ $data->ingredients }}
-                                                    </p>
-                                                </td>
-
+                                                <td> <p class="text-xs font-weight-bold mb-0"> {{ strlen($data->ingredients) > 10 ? substr($data->ingredients, 0, 10) . '...' : $data->ingredients }} </p> </td>
                                                 <td>
                                                     <p class="text-xs font-weight-bold mb-0">
                                                         {{ $data->price }}

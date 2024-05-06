@@ -43,7 +43,7 @@
 
                             Price
                         </label>
-                        <input type="number" name="price" class="form-control" required value="{{ $data->price }}" placeholder="12.00" step="any">
+                        <input type="text" name="price" class="form-control" required value="{{ $data->price }}" placeholder="12.00" step="any">
                     </div>
 
                     <div class="mb-3">

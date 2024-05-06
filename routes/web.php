@@ -132,6 +132,7 @@ Route::prefix('/admin')->middleware([ 'auth' ,'AuthMiddleware' , 'trackOnline'])
         Route::post('/blog',[ShowController::class,'blog']);
         Route::post('/opening',[ShowController::class,'opening']);
         Route::post('/menu',[ShowController::class,'menu']);
+        Route::post('/retail_menu',[ShowController::class,'retail_menu']);
 
         // {{ Search }}
         Route::get('/search_menu', [MenuController::class,'search_menu']);

@@ -126,4 +126,21 @@ class ShowController extends Controller
       return redirect()->back()->with('message' , 'Menu Section Hidden');
       }
     }
+
+    public function retail_menu(Request $request)
+    {
+       $showall = Show::find(1);
+
+       $showall->retail_menu_sh = $request->datash;
+
+       $showall->save();
+
+       if($request->datash == 1)
+       {
+        return redirect()->back()->with('message' , 'Retail Menu Section Visible');
+       }else
+       {
+      return redirect()->back()->with('message' , 'Retail Menu Section Hidden');
+      }
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Show;
 use App\Models\Category;
 use App\Models\RetailMenu;
 use Illuminate\Http\Request;
@@ -11,10 +12,12 @@ class RetailMenuController extends Controller
 {
     public function show_retail_menu()
     {
-        $RetailMenu = RetailMenu::latest()->paginate(10);
+        $RetailMenu = RetailMenu::latest()->paginate(20);
         $categories = Category::all();
+        $show    = Show::find(1);
 
-        return view('admin.retail_menu.show_retail_menu' , compact('RetailMenu' , 'categories'));
+
+        return view('admin.retail_menu.show_retail_menu' , compact('RetailMenu' , 'categories' , 'show'));
     }
 
     public function add_retail_menu(Request $request)

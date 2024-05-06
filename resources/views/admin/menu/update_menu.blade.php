@@ -34,7 +34,7 @@
 
                             Ingredients
                         </label>
-                        <textarea type="text" name="ingredients" class="form-control" required placeholder="Ingredients...">{{ $data->ingredients }}</textarea>
+                        <textarea type="text" name="ingredients" class="form-control"  placeholder="Ingredients...">{{ $data->ingredients }}</textarea>
                     </div>
 
 
@@ -43,7 +43,7 @@
 
                             Price
                         </label>
-                        <input type="number" name="price" class="form-control" required value="{{ $data->price }}" placeholder="12.00" step="any">
+                        <input type="text" name="price" class="form-control" required placeholder="12.00" step="any" value="{{ $data->price }}">
                     </div>
 
                     <div class="mb-3">

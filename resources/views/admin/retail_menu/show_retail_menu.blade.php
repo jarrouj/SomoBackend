@@ -21,6 +21,22 @@
                         </div>
 
                         <div class="row mb-3">
+
+                            <div class="d-flex justify-content-center">
+                                <form action="/admin/retail_menu" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @if($show->retail_menu_sh == 1)
+                                    <input type="hidden"  name="datash" value="0">
+                                    @endif
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input {{$show->retail_menu_sh == 1 ? 'bg-success' : 'bg-danger' }}" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                                        onchange="this.form.submit()" value="{{ $show->retail_menu_sh == 1 ? '0' : '1' }}" name="datash" {{$show->retail_menu_sh == 1 ? 'checked' : ''}}>
+                                        <label class="form-check-label" for="flexSwitchCheckDefault">Show Section</label>
+                                      </div>
+                                  </form>
+                            </div>
+
+                        <div class="row mb-3">
                             <div class="col-12">
                                 <div class="d-flex justify-content-center">
 
@@ -37,7 +53,7 @@
                                 <div class="d-block w-50 m-auto">
                                     <form action="{{ url('/admin/search_retail_menu') }}" method="GET">
                                         @csrf
-                                        <p for="" class="text-center form-label">Product Name
+                                        <p for="" class="text-center form-label">Product Retail Name
                                         </p>
 
                                         <div class="d-flex justify-content-center">
@@ -106,11 +122,8 @@
                                             </td>
 
 
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $data->ingredients }}
-                                                </p>
-                                            </td>
+                                            <td> <p class="text-xs font-weight-bold mb-0"> {{ strlen($data->ingredients) > 10 ? substr($data->ingredients, 0, 10) . '...' : $data->ingredients }} </p> </td>
+
 
                                             <td>
                                                 <p class="text-xs font-weight-bold mb-0">

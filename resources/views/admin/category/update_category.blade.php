@@ -28,6 +28,23 @@
                         <input type="text" name="name" class="form-control" placeholder="Catyegory Name..." required value="{{ $data->name }}">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <select name="location_id" class="form-select" required>
+                            @if ($locCat->where('category_id', $data->id)->count() === 1)
+                                @foreach ($locations as $location)
+                                    <option value="{{ $location->id }}" {{ $locCat->where('category_id', $data->id)->first()->location_id == $location->id ? 'selected' : '' }}>
+                                        {{ $location->country }}
+                                    </option>
+                                @endforeach
+                            @else
+                                <option selected value="0">All Countries</option>
+                                @foreach ($locations as $location)
+                                    <option value="{{ $location->id }}">{{ $location->country }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
 
 
                 </div>

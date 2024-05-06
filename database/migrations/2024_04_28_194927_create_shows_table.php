@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('blog_sh');
             $table->integer('opening_sh');
             $table->integer('menu_sh');
+            $table->integer('retail_menu_sh');
             $table->timestamps();
         });
     }
